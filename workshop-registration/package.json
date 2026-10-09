@@ -1,0 +1,15 @@
+{
+  "name": "workshop-registration",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "start": "concurrently -n api,web -c blue,magenta \"npm start --prefix server\" \"npm start --prefix client\"",
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed:reset": "npm run seed:reset --prefix server",
+    "test:concurrency": "npm run test:concurrency --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
